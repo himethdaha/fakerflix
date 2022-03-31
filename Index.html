@@ -4,16 +4,248 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 
-    <title>FakerFlix &mdash; Watch movies for FREE</title>
+    <title>RealStates &mdash; Buy your Dream Home</title>
   </head>
   <body>
-    Hello There
+    <!--CENTERED CONTAINER-->
+    <div class="container">
+      <!--HEADER ELEMENT OF THE PAGE-->
+      <header class="header">
+        <img src="img/homelogo.jpg" alt="Home picture" class="header__logo" />
+        <!-- <svg class="header__logo">
+          <use href="img/home.svg#icon-home"></use>
+        </svg> -->
+        <!--FORM ELEMENT USED AS SEARCH BAR-->
+        <form action="#" class="searchbar">
+          <input
+            type="text"
+            class="searchbar__input"
+            placeholder="Enter your search"
+          />
+          <button class="searchbar__searchbtn">
+            <!--USING SVG'S FOR ICONS-->
+            <svg class="searchbar__searchicon">
+              <use href="img/sprite.svg#icon-price-ribbon"></use>
+            </svg>
+          </button>
+        </form>
+        <!--NAVBAR FOR USERS NOTIFICATIONS, MESSAGES AND PROFILE PIC-->
+        <nav class="user-navigation">
+          <!--NOTIFICATION BOX-->
+          <div class="user-navigation__icon">
+            <svg class="user-navigation__icon-img">
+              <use href="img/sprite.svg#icon-bookmark"></use>
+            </svg>
+            <span class="user-navigation__number">8</span>
+          </div>
+          <!--MESSAGE BOX-->
+          <div class="user-navigation__icon">
+            <svg class="user-navigation__icon-img">
+              <use href="img/sprite.svg#icon-chat"></use>
+            </svg>
+            <span class="user-navigation__number">11</span>
+          </div>
+          <!--PROFILE BOX-->
+          <div class="user-navigation__icon">
+            <img
+              src="img/userdp.jfif"
+              alt="user profile pic"
+              class="user-navigation__user-img"
+            />
+            <span class="user-navigation__user-name">Kamado Tanjiro</span>
+          </div>
+        </nav>
+      </header>
+      <div class="content">
+        <nav class="sidebar">
+          <ul class="sidebar__list">
+            <li class="sidebar__item sidebar__item--active">
+              <a href="#" class="sidebar__item__link">
+                <svg class="sidebar__icon">
+                  <use href="img/spriteone.svg#icon-home"></use>
+                </svg>
+                <span class="sidebar__list-name">Houses</span>
+              </a>
+            </li>
+            <li class="sidebar__item">
+              <a href="#" class="sidebar__item__link">
+                <svg class="sidebar__icon">
+                  <use href="img/spriteone.svg#icon-office"></use>
+                </svg>
+                <span class="sidebar__list-name">Apartments</span>
+              </a>
+            </li>
+            <li class="sidebar__item">
+              <a href="#" class="sidebar__item__link">
+                <svg class="sidebar__icon">
+                  <use href="img/spriteone.svg#icon-key"></use>
+                </svg>
+                <span class="sidebar__list-name">Rentals</span>
+              </a>
+            </li>
+            <li class="sidebar__item">
+              <a href="#" class="sidebar__item__link">
+                <svg class="sidebar__icon">
+                  <use href="img/spriteone.svg#icon-price-tag"></use>
+                </svg>
+                <span class="sidebar__list-name">Sell</span>
+              </a>
+            </li>
+          </ul>
+          <div class="copyright">
+            <p class="copyright__text">
+              &copy; <span class="year"></span> All rights reserved by
+              RealStates.
+            </p>
+          </div>
+        </nav>
+        <main class="main-content">
+          <div class="gallery">
+            <figure class="gallery__home">
+              <img
+                src="img/hometwo.webp"
+                alt="Living room view of the house"
+                class="gallery__photo"
+              />
+            </figure>
+            <figure class="gallery__home">
+              <img
+                src="img/homethree.webp"
+                alt="Tv room view of the house"
+                class="gallery__photo"
+              />
+            </figure>
+            <figure class="gallery__home">
+              <img
+                src="img/homefour.webp"
+                alt="Master bedroom view of the house"
+                class="gallery__photo"
+              />
+            </figure>
+          </div>
+          <div class="overview">
+            <div class="overview__one">
+              <h1 class="overview__one__heading">Mansion Ile-De-France</h1>
+              <p class="overview__one__price">80.000.000 £</p>
+            </div>
+            <div class="overview__two">
+              <svg class="overview__two__icon">
+                <use href="img/sprite.svg#icon-compass"></use>
+              </svg>
+              <a href="#" class="overview__two__location">Paris,France</a>
+              <div class="overview__status">
+                <p class="overview__two__status">Offers Made</p>
+                <p class="overview__two__offers">10</p>
+              </div>
+            </div>
+          </div>
+          <div class="information">
+            <div class="details">
+              <p class="details__paragraph">
+                In a prestigious, calm and secure district of the 16th
+                arrondissement of Paris, on a closed square, stands behind a
+                historic facade, a newly built and inimitable 1,237 sqm
+                property. This house contains an extremely comfortable interior
+                with the best of the latest modern features, pleasant volumes
+                and nice large windows allowing natural light in, just like the
+                original glass roof!
+              </p>
+              <h3 class="details__header">Amneties</h3>
+              <ul class="details__list">
+                <li class="details__list__item">Library</li>
+                <li class="details__list__item">Pool</li>
+                <li class="details__list__item">Wine Cellar</li>
+                <li class="details__list__item">Fitness Room</li>
+                <li class="details__list__item">Massage Room</li>
+                <li class="details__list__item">Private Nightclub</li>
+                <li class="details__list__item">Home Theater</li>
+                <li class="details__list__item">Bar Area</li>
+                <li class="details__list__item">Game Room</li>
+                <li class="details__list__item">Sauna</li>
+              </ul>
+
+              <h3 class="realtor__header">Agent</h3>
+              <div class="realtor">
+                <img
+                  src="img/realtor.webp"
+                  alt="Realtor image"
+                  class="realtor__image"
+                />
+                <div class="realtor__info">
+                  <h1 class="realtor__info__name">Eren Jäger</h1>
+                  <a href="#" class="realtor__info__email">erenj@gmail.com</a>
+                  <p class="realtor__info__phone">+1 (647)338-8193</p>
+                  <button class="realtor__info__more">
+                    More Information
+                    <span class="realtor__info__more__downarr">&darr;</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="contact">
+              <h3 class="contact__header">Let's Get in Touch</h3>
+              <form action="#" class="contact__form" id="cont__form">
+                <input
+                  type="text"
+                  class="contact__form__item"
+                  placeholder="First Name"
+                />
+                <input
+                  type="text"
+                  class="contact__form__item"
+                  placeholder="Last Name"
+                />
+                <input
+                  type="text"
+                  class="contact__form__item"
+                  placeholder="Email"
+                />
+                <input
+                  type="text"
+                  class="contact__form__item"
+                  placeholder="Phone Number (optional)"
+                />
+              </form>
+              <textarea
+                name=""
+                id="cont__form"
+                cols="30"
+                rows="10"
+                class="contact__message__box"
+                placeholder="Message"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="cta">
+            <p class="cta__message">
+              be a proud owner of an extraordinary home!
+            </p>
+            <button class="cta__btn">
+              <span class="cta__btn__visible">Make an Offer</span>
+              <span class="cta__btn__hidden">Only 2 Offers Left!</span>
+            </button>
+          </div>
+        </main>
+      </div>
+    </div>
   </body>
 </html>
+
+<!--Script to get the current year-->
+<script>
+  let today = new Date();
+  let year = today.getFullYear();
+
+  const textYear = document.querySelector(".year");
+  textYear.innerHTML = year;
+</script>

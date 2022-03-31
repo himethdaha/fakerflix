@@ -1,7 +1,7 @@
 {
-  "name": "fakerflix",
+  "name": "realstates",
   "version": "1.0.0",
-  "description": "Landing page for faker flix website",
+  "description": "Landing page for user of a real estate website",
   "main": "index.js",
   "scripts": {
     "watch:sass": "node-sass sass/main.scss css/style.css -w",

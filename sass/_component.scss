@@ -1,0 +1,521 @@
+///LOGO
+.header__logo {
+  height: 4.6rem;
+  margin-left: 1.6rem;
+}
+
+//FORM COMPONENTS
+.searchbar {
+  flex: 0 0 40%;
+  text-align: center;
+
+  //Search bar
+  &__input {
+    background-color: var(--light-gray-one);
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    border-radius: 10rem;
+    padding: 1rem 1.4rem;
+    //90% of the parent class (.searchbar)
+    width: 90%;
+    transition: all 0.3s;
+    //So that the icon will overlap with the search bar
+    margin-right: -3rem;
+
+    //When clicking on the input search bar
+    &:focus {
+      outline: none;
+      width: 100%;
+      background-color: var(--light-gray-two);
+      color: var(--dark-grey-two);
+    }
+    &::-webkit-input-placeholder {
+      font-weight: 100;
+    }
+  }
+  //Searchbar button
+  &__searchbtn {
+    border: none;
+    background-color: var(--light-gray-one);
+
+    &:focus {
+      outline: none;
+      background-color: var(--light-gray-two);
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    //When the button is being clicked
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+  &__searchicon {
+    height: 1.8rem;
+    width: 1.8rem;
+    fill: var(--dark-grey);
+  }
+}
+
+//USER NAVIGATION COMPONENTS
+.user-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 0 0 30%;
+  align-self: stretch;
+
+  //Common div box for all the icons
+  &__icon {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.8rem;
+    //So that when hovering over, the background color will go from top-bottom of the navbar instead of just taking the content height
+    height: 100%;
+    position: relative;
+    &:hover {
+      background-color: var(--light-gray);
+      cursor: pointer;
+    }
+  }
+  //icon
+  &__icon-img {
+    height: 2.5rem;
+    width: 2.5rem;
+    fill: var(--dark-grey-one);
+  }
+
+  //Notification and Message numbers
+  &__number {
+    font-size: 1rem;
+    border-radius: 10rem;
+    height: 2.1rem;
+    width: 2.1rem;
+    font-weight: 700;
+    background-color: #df4158;
+    color: #fff;
+    position: absolute;
+    left: 53%;
+    top: 20%;
+    //To center the numbers
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  //UserDp Box
+  &__user-img {
+    height: 5rem;
+    border-radius: 10rem;
+    margin-right: 1rem;
+  }
+  &__user-name {
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+}
+
+//SIDEBAR COMPONENT
+.sidebar {
+  //Unordered list
+  &__list {
+    list-style: none;
+    font-size: 1.6rem;
+    margin-top: 3rem;
+  }
+
+  //Unordered list item (li)
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+    position: relative;
+    //Link for each list item
+    &__link:link,
+    &__link:visited {
+      display: flex;
+      align-items: center;
+
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.65px;
+      padding: 1rem 2rem;
+    }
+  }
+
+  //Adding a pseudo element before the list item (li)
+  &__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #f64f59;
+    width: 5px;
+    height: 100%;
+    transform: scaleY(0);
+    //Scale Y over 0.4 sec, Increase width over 0.2 sec with a  with a delay of 0.2 sec
+    //Cubic Bezier is added to the width transformation
+    //In cubic bezier, Y values can go over the range of [0,1] but X can't
+    transition: transform 0.4s,
+      width 0.2s cubic-bezier(1, -0.01, 0.02, 0.99) 0.2s, background-color 0.1s;
+  }
+
+  //When hovering over the list item (li), show the pseudo element
+  &__item:hover::before {
+    transform: scaleY(1);
+    width: 100%;
+  }
+
+  //When clicking on a list item or when the list item is actice
+  &__item:active::before {
+    background-color: var(--tertiary-color);
+  }
+
+  //For the first list item to be shown as active
+  &__item--active::before {
+    transform: scaleY(1);
+    width: 100%;
+    background-color: var(--tertiary-color);
+  }
+
+  &__icon {
+    fill: #fff;
+    height: 2.6rem;
+    width: 2.6rem;
+    margin-right: 0.8rem;
+    z-index: 1;
+  }
+
+  //Name for each item
+  &__list-name {
+    z-index: 1;
+  }
+}
+
+///MAIN CONTENT///
+//COPYRIGHT TEXT
+.copyright {
+  font-size: 1.4rem;
+  padding: 0.5rem 0.75rem;
+}
+
+//GALLERY COMPONENT
+.gallery {
+  display: flex;
+  //Image component
+  &__photo {
+    width: 100%;
+    display: block;
+  }
+}
+
+//OVERVIEW COMPONENT
+.overview {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--light-gray);
+
+  &__one {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: auto;
+
+    &__heading {
+      font-size: 2.6rem;
+      margin: 0 1.2rem 0 1rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.75px;
+    }
+
+    &__price {
+      margin-top: 0.5rem;
+      color: var(--dark-grey);
+    }
+  }
+
+  &__two {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+
+    &__icon {
+      height: 2.2rem;
+      width: 2.2rem;
+      fill: var(--tertiary-color);
+      margin-right: 1rem;
+    }
+
+    &__location {
+      margin-right: 3rem;
+      border: none;
+      color: var(--tertiary-color);
+      //currentColor is the font color
+      border-bottom: 1px solid currentColor;
+      text-decoration: none;
+      font-size: 2rem;
+      transition: all 0.3s;
+
+      &:hover {
+        //On hover the border changes color too cos of the effect frm currentColor
+        transform: translateY(-2px);
+        color: #e75761;
+      }
+    }
+
+    &__offers {
+      font-weight: 600;
+    }
+  }
+
+  &__status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #e25862;
+    color: #fff;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      animation: pulsate 1s infinite;
+    }
+  }
+}
+
+//Animation for the location link
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 4rem #a74c52;
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}
+
+//MAIN CONTENT COMPONENT
+.details {
+  padding: 1rem 2rem;
+  //Main Description
+  &__paragraph {
+    margin-bottom: 2.4rem;
+  }
+
+  &__header {
+    text-transform: uppercase;
+    font-size: 2.4rem;
+  }
+
+  //List
+  &__list {
+    list-style: none;
+    border-top: 1px solid var(--light-gray);
+    border-bottom: 1px solid var(--light-gray);
+    padding: 2rem 0;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+      //50% cos I want two items side by side
+      flex: 0 0 50%;
+      margin-bottom: 0.5rem;
+      position: relative;
+      padding-left: 1rem;
+    }
+
+    //For the list style
+    &__item::before {
+      content: "";
+      display: inline-block;
+      height: 2rem;
+      width: 2rem;
+      //To get the svg centered
+      position: absolute;
+      top: 15%;
+      left: -4%;
+
+      //Using masks to change the color of the svg
+      background-color: var(--tertiary-color);
+      -webkit-mask-image: url(../img/chevron-small-right.svg);
+      -webkit-mask-size: cover;
+      mask-image: url(../img/chevron-small-right.svg);
+      mask-size: cover;
+    }
+  }
+}
+
+//Realtor
+.realtor__header {
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  border-bottom: 1px solid var(--light-gray);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.realtor {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.6rem;
+
+  &__image {
+    height: 30rem;
+    transition: all 0.5s;
+
+    &:hover {
+      -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+  }
+
+  &__info {
+    align-self: center;
+    margin-right: 4rem;
+    &__name {
+      font-size: 3.4rem;
+      font-weight: 500;
+    }
+
+    &__email {
+      font-style: italic;
+      color: #636568;
+    }
+
+    &__more {
+      border: none;
+      background-color: #fff;
+      margin-top: 1.8rem;
+      margin-left: 1.2rem;
+      font-size: 1.6rem;
+      cursor: pointer;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid currentColor;
+      transition: all 0.2s;
+
+      &__downarr {
+        display: inline-block;
+        margin-right: 1rem;
+        font-size: 1.4rem;
+      }
+
+      &:hover {
+        color: var(--tertiary-color);
+      }
+    }
+  }
+}
+
+//CONTACT
+.contact {
+  padding: 1rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    font-size: 2.4rem;
+    border-bottom: 1px solid var(--light-gray);
+    margin-bottom: 2rem;
+  }
+
+  &__form {
+    &__item {
+      width: 100%;
+      margin-bottom: 1.2rem;
+      border: none;
+      border-bottom: 1px solid var(--dark-grey);
+      font-size: 1.8rem;
+
+      &:focus {
+        outline: none;
+        border-bottom: 1px solid #393a3b;
+      }
+    }
+  }
+
+  &__message__box {
+    font-size: 1.8rem;
+    padding: 0.7rem 1rem;
+
+    &:focus {
+      outline: #393a3b;
+    }
+  }
+}
+
+//CTA
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  background-color: #fff;
+  margin-bottom: 2rem;
+
+  &__message {
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 200;
+    margin-bottom: 1.6rem;
+  }
+
+  &__btn {
+    border: none;
+    font-size: 2rem;
+    background-image: linear-gradient(to right, #ff416c, #ff4b2b);
+    border-radius: 10rem;
+    color: #fff;
+    padding: 2.4rem 4.2rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+
+    &__visible {
+      display: inline-block;
+      transition: all 0.3s;
+      height: 100%;
+      width: 100%;
+    }
+    &__hidden {
+      display: inline-block;
+      transition: all 0.3s;
+      position: absolute;
+      top: -100%;
+      left: 0%;
+
+      height: 100%;
+      width: 100%;
+    }
+
+    &:hover {
+      background-image: linear-gradient(to left, #ff416c, #ff4b2b);
+      animation: pulsate 1s infinite;
+    }
+    &:hover &__visible {
+      transform: translateY(240%);
+    }
+
+    &:hover &__hidden {
+      top: 33%;
+    }
+  }
+}
